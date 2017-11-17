@@ -23,20 +23,37 @@ Email : zhaozhibin@stu.xjtu.edu.cn
 
 Function
 STFT : fast STFT not using any loop
+
 Polynomial_chriplet : Polynomial chriplet transform
+
 polylsqr : fitting of a polynomial
+
 Do_PCT : Iteratively using PCT to achieve best solution
+
 Cal_Index : Calculate the Index of time domain for dimensional and non-dimensional
+
 Cal_Plot : This function realizes calculating , ploting and save the figure
+
 Calculatingbearing : calculating the eigenfrequency of bearing 
+
 Data_Convert : This function realizes Converting the data
+
 DisplaySTFT : Display the spectrogram in the specified range
+
 Dofft : Calculating the fft of the signal
+
 Hilbert_envelope : Calculating the Hilbert envelope spectrum of the signal
+
 jet_Linchao : Variant of HSV
+
 MakeWindows : Make artificial Window so it will be tight frame
+
 MakeWindowsTF : Make artificial Window so it will be tight frame
+
 Rms_Estimate : This function realizes calculating , ploting and save the Rms_Comparison figure
+
 Pars_Setting : Setting some constant parameters
+
 Fast_STFT_SST_Matrix_ZoomNoRecon : Fast zoomed Synchrosqueezing Transform
+
 
