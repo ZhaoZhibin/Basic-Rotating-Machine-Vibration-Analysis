@@ -1,3 +1,4 @@
+% This function test Fast Polynomial chriplet analysis
 clear all
 close all
 addpath('./util')

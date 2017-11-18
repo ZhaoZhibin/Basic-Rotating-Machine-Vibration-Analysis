@@ -3,6 +3,7 @@ function [ Eigenfre] = Calculatingbearing(fr, Dp, Dw, theta, n)
 % (supposed that the contact between rolling elements and inner and outer rings is pure roll)
 % made by Zhaozhibin
 % date:2015.12.6
+% Email:zhaozhibin@stu.xjtu.edu.cn
 % Input:
 %       fr : the rotating frequency of the shaft/HZ
 %       Dp : the pitch diameter of bearing which is equal to (OD+ID)/2  /mm

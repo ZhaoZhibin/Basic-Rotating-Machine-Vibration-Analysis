@@ -1,4 +1,4 @@
-% ±æ≥Ã–Ú≤‚ ‘STFT∫ÕSTFT-based SST
+% This function tests STFT and STFT-based SST
 addpath('./util')
 addpath('./Fast_Synchrosqueezing_Transform')
 close all;clear;clc;

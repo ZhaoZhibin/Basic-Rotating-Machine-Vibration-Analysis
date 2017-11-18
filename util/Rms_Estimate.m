@@ -13,17 +13,17 @@ function Rms_Estimate(CurrentFolder, MyFileInfo_Channel , Fs , Cons , Channel_Nu
 %  Date: 2017.06.19
 
 
-cl = {'r';'g';'b';'y';'m';'c';'k'}; %根据需要的通道数来画图
+cl = {'r';'g';'b';'y';'m';'c';'k'};  %Refer to the number of channels
 for i = 1 : length(MyFileInfo_Channel)
     if ~isempty(find(Cons.Speed == Channel_Number(i)))
         continue;
     end
     filename = MyFileInfo_Channel(i).name;
     load(filename)
-    Data = Data(:); % 实现行向量向列向量的转换
-    Data = Data-mean(Data); %去平均
+    Data = Data(:);  % transfer to column vector
+    Data = Data-mean(Data); 
     L = length(Data);
-    % 计算RMS值，每Cons.Len个点计算一次，中间重叠Cons.Olap个点
+    % Calculate RMS
     N = Cons.Len;
     start = 1;
     t = (1:L)/Fs;
@@ -37,8 +37,8 @@ for i = 1 : length(MyFileInfo_Channel)
     hold all;
     axis([-inf,inf,-inf,inf]);   
 end
-% legend('低压','高压','Location','NorthEastOutside');
-legend('低压','高压','Location','NorthEastOutside');
+% legend('low pressure','high pressure','Location','NorthEastOutside');
+legend('low pressure','high pressure','Location','NorthEastOutside');
 filename_save = [CurrentFolder '\Total_Comparison.fig'];
 saveas(gcf, filename_save); 
 close gcf

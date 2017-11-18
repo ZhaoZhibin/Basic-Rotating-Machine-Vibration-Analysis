@@ -1,3 +1,4 @@
+%% This function tests fast STFT
 clear all
 addpath('./util')
 addpath('./Fast_STFT')

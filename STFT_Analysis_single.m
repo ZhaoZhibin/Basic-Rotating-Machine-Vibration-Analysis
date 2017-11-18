@@ -5,24 +5,24 @@ close all
 original_path = fileparts(mfilename('fullpath'));
 tools = genpath(original_path);
 addpath(tools)
-Fs = 6000;%设置采样频率
-for i = 3:3 %根据通道数目自行设置
+Fs = 6000; 
+for i = 3:3 
     if i == 5
-        continue;  %控制输入通道的数目，这里例如11通道未使用
+        continue;   
     else
 %         filename = ['HBMchan' num2str(i) '.mat'];
         filename = ['Econchan',num2str(i),'.mat'];
         load(filename);
-        Data = Data(:); % 实现行向量向列向量的转换
+        Data = Data(:);  
 %         Data = Data(5000*Fs:5100*Fs-1);
-        Data = Data-mean(Data); %去平均
+        Data = Data-mean(Data);  
 %         figure(1)
 %         plot((1:size(Data,1))/Fs,Data)
         figure(i)
         nLevel = 3000;
         win = MakeWindows('Gaussian', 6000 , nLevel);
         Nfft = Fs / 1;
-        [specgmShow] = STFT(Data,win , nLevel , Nfft); %具体参数调节输入help STFT,数据点太长可以调整分辨率
+        [specgmShow] = STFT(Data,win , nLevel , Nfft);  
         Step = Fs/1000;
         specgmShow = abs(specgmShow(1:floor(size(specgmShow,1)/Step),:));
         [ff,tt] = size(specgmShow);
@@ -31,11 +31,11 @@ for i = 3:3 %根据通道数目自行设置
         axis xy;
         xlabel('time : s');
         ylabel('frequecy : Hz')   
-        title([num2str(i),'通道时频图']);
-        axis([0 , (((tt-1)*nLevel)/Fs) ,0 , 400])%此处限制坐标的范围
+        title([num2str(i),'TimeFrequency']);
+        axis([0 , (((tt-1)*nLevel)/Fs) ,0 , 400]) 
 
 %          caxis([0,0.001])
-%          saveas(gcf, ['G:\XH_test\2017\0610\' num2str(i) '时频图.fig']); 
+%          saveas(gcf, ['G:\XH_test\2017\0610\' num2str(i) 'TimeFrequency.fig']); 
     end    
 end
 
